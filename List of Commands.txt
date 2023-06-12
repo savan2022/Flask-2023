@@ -1,0 +1,16 @@
+heroku login
+Install heroku-cli and add to path
+
+pip install gunicorn --> Using it we can serve our application in multiple threads and it uses Procfile
+pip freeze requirements.txt
+Create Procfile
+web: gunicorn app:app # tell heroku execute our app.py
+heroku login
+
+git init
+git add .
+git commit -m "Initial commmit"
+
+heroku create todo-codewithharry
+git remote -v
+git push heroku master

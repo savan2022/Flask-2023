@@ -1,0 +1,34 @@
+### Remember :
+
+- Create Virtual env
+- Create database using schema
+- Deploy on Service like Heroku
+
+- Static file is use to server our file as it is in the browser.
+- Jinja2 Snippet Kit extension use jif, jblock, ifor, jifelse...
+- set PYTHONDONTWRITEBYTECODE=some_dummy_text, before starting the interpreter to avoid default generated pycache folder.
+
+### Create Database :
+
+- pip install flask-sqlalchemy [ORM Mapper]
+- __repr__ method is used for what to display when we print any object
+- To create database -> go to python shell
+    - from app import db
+    - db.create_all()
+- open todo.db in sqlite viewer in google
+- To add Todo objects
+    - todo = Todo(title="First Todo", desc="Start Investing in Stock Market")
+    - db.session.add(todo)
+    - db.session.commit()
+- To retrieve Todo objects
+    - Todo.query.all()
+- Always use loop.index instead of SNo
+- Whenever we sent post request to any route then we need to specify list of requests
+    - @app.route("/", methods=["GET", "POST"])
+- jinja2 filter -> use pipe operator followed by filter name
+    - {% if all_todos|length == 0 %}  
+- search_result = Todo.query.filter(Todo.title.ilike(f"%{search_title}%")).all()
+- Create css and js file in static folder
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> # use jurl
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+ 
